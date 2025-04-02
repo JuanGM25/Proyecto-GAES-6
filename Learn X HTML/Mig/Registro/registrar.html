@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - Learn-X</title>
+    <link rel="stylesheet" href="estilosRegistro.css">
+</head>
+<body>
+    <div class="container">
+        <button class="back-button" onclick="goBack()">&#60;</button>
+        <h1>Registrarse</h1>
+        <form id="registroForm">
+            <div class="form-group">
+                <input type="text" name="nombre" placeholder="Nombre" required>
+                <input type="text" name="apellido" placeholder="Apellido" required>
+            </div>
+            <div class="form-group">
+                <input type="email" name="correo" placeholder="Correo electrónico" required>
+            </div>
+            <div class="form-group">
+                <label for="fechaNacimiento">Fecha de Nacimiento</label>
+                <input type="date" id="fechaNacimiento" name="fechaNacimiento" required>
+            </div>
+            <div class="form-group">
+                <input type="password" id="contraseña" name="contraseña" placeholder="Contraseña" required minlength="6">
+                <input type="password" id="confirmarContraseña" name="confirmarContraseña" placeholder="Confirmar Contraseña" required minlength="6">
+            </div>
+            <button type="submit">Registrarse</button>
+        </form>
+        <p class="social-login">O continúa con:</p>
+        <div class="social-buttons">
+            <button class="google-btn">Continuar con Google</button>
+            <button class="facebook-btn">Continuar con Facebook</button>
+        </div>
+        <p>Si ya tienes cuenta inicia sesión<a href="login.html"> aquí</a></p>
+        <div id="error-message" class="error-message"></div>
+    </div>
+
+    <script>
+        const form = document.getElementById("registroForm");
+        const errorMessageContainer = document.getElementById("error-message");
+
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();  
+
+            const fechaNacimiento = document.getElementById("fechaNacimiento").value;
+            const contraseña = document.getElementById("contraseña").value;
+            const confirmarContraseña = document.getElementById("confirmarContraseña").value;
+
+            if (contraseña !== confirmarContraseña) {
+                errorMessageContainer.textContent = "Las contraseñas no coinciden.";
+                errorMessageContainer.style.display = "block";
+                return;
+            }
+
+            // Validación de edad mínima de 15 años
+            const today = new Date();
+            const birthDate = new Date(fechaNacimiento);
+            const age = today.getFullYear() - birthDate.getFullYear();
+            const month = today.getMonth();
+            const day = today.getDate();
+
+            // Ajusta la edad si aún no ha cumplido años este año
+            if (month < birthDate.getMonth() || (month === birthDate.getMonth() && day < birthDate.getDate())) {
+                age--;
+            }
+
+            if (age < 1) {
+                errorMessageContainer.textContent = "Edad Inválida";
+                errorMessageContainer.style.display = "block";
+                return;
+            }
+
+            window.location.href = '/Juan/Pagina inicio usuario/usuario.html';
+        });
+
+        function goBack() {
+            window.location.href = '/Juan/Pagina de Inicio/PaginaInicio.html';
+        }
+    </script>
+</body>
+</html>

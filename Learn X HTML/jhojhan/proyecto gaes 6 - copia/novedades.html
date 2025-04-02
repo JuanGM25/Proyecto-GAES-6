@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publicación de Novedades</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #8cb973; /* Verde claro */
+            color: #333; /* Gris oscuro */
+        }
+        header {
+            background-color: #1d221d; /* Verde oscuro */
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #000;
+            color: white;
+        }
+        header h1 {
+            margin: 0;
+        }
+        .container {
+            max-width: 800px; /* Diseño más compacto */
+            margin: 20px auto;
+            padding: 15px;
+            display: flex;
+            gap: 15px;
+        }
+        .sidebar {
+            width: 40%;
+            text-align: center;
+            padding: 10px;
+            background-color: #ffffff; /* Blanco */
+            border: 1px solid #000000; /* Negro */
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .sidebar img {
+            width: 80px;
+            height: 80px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        .sidebar h3 {
+            margin: 10px 0;
+            color: #0ba006; /* Verde oscuro */
+        }
+        .date-selector {
+            margin-top: 15px;
+        }
+        .date-selector select {
+            padding: 5px;
+            font-size: 14px;
+            margin: 5px;
+            border: 1px solid #000;
+            border-radius: 5px;
+        }
+        .main-content {
+            width: 60%;
+            padding: 15px;
+            background-color: #ffffff; /* Blanco */
+            border: 1px solid #000000; /* Negro */
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .main-content h2 {
+            margin: 0 0 10px;
+            text-align: center;
+            color: #0ba006; /* Verde oscuro */
+        }
+        .main-content textarea {
+            width: 90%;
+            height: 200px; /* Área de texto más grande */
+            margin-top: 10px;
+            padding: 10px;
+            border: 1px solid #000000; /* Negro */
+            border-radius: 5px;
+            resize: none;
+        }
+        .main-content .publish-button {
+            text-align: right;
+            margin-top: 10px;
+        }
+        .main-content button {
+            padding: 10px 20px;
+            background-color: #18c527; /* Verde brillante */
+            color: #000; /* Negro */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .main-content button:hover {
+            background-color: #000; /* Negro */
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Novedades de Software</h1>
+        <img src="Multimedia/LogoLearnX.png" alt="" width="100px">
+    </header>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <img src="Multimedia/10930073.png" alt="Imagen de página" width="600px" height="600px">
+            <h3>Seleccionar Fecha</h3>
+            <!-- Selector de fecha dividido en día, mes y año -->
+            <div class="date-selector">
+                <select id="day">
+                    <option>Día</option>
+                    <!-- Días del mes -->
+                    <script>
+                        for (let i = 1; i <= 31; i++) {
+                            document.write(`<option value="${i}">${i}</option>`);
+                        }
+                    </script>
+                </select>
+                <select id="month">
+                    <option>Mes</option>
+                    <option value="1">Enero</option>
+                    <option value="2">Febrero</option>
+                    <option value="3">Marzo</option>
+                    <option value="4">Abril</option>
+                    <option value="5">Mayo</option>
+                    <option value="6">Junio</option>
+                    <option value="7">Julio</option>
+                    <option value="8">Agosto</option>
+                    <option value="9">Septiembre</option>
+                    <option value="10">Octubre</option>
+                    <option value="11">Noviembre</option>
+                    <option value="12">Diciembre</option>
+                </select>
+                <select id="year">
+                    <option>Año</option>
+                    <!-- Años desde 1900 hasta el actual -->
+                    <script>
+                        const currentYear = new Date().getFullYear();
+                        for (let i = 1900; i <= currentYear; i++) {
+                            document.write(`<option value="${i}">${i}</option>`);
+                        }
+                    </script>
+                </select>
+            </div>
+        </div>
+        <!-- Main Content -->
+        <div class="main-content">
+            <h2>Novedad</h2>
+            <textarea placeholder="Escribe aquí la novedad..."></textarea>
+            <div class="publish-button">
+                <button>Publicar</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

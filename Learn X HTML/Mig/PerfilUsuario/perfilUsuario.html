@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil del Usuario</title>
+    <link rel="stylesheet" href="estilosperfilUsuario.css">
+</head>
+<body>
+    <header>
+        <a href="/Juan/Pagina inicio usuario/usuario.html">
+            <img src="Multimedia/LogoLearnX.png" width="80px" alt="Logo de LearnX">
+        </a>        <h1>Mi Perfil</h1>
+        <div class="dropdown">
+            <button class="menu-button">☰</button>
+            <div class="dropdown-content">
+                <a href="/jhojhan/proyecto gaes 6 - copia/crearCurso.html">Crear curso</a>
+                <a href="/Mig/editarPerfil/editPerfil.html">Editar perfil</a>
+                <a href="/Mig/listaFav/listafav.html">Lista de favoritos</a>
+                <a href="/Juan/Pagina de Inicio/PaginaInicio.html">Cerrar Sesión</a>
+            </div>
+        </div>
+    </header>
+    <main class="profile-container">
+        <section class="user-info">
+            <img src="https://mdbcdn.b-cdn.net/img/new/avatars/1.webp" class="rounded-circle shadow-4" style="width: 150px;" alt="Avatar" />            <h2>Juan Esteban</h2>
+            <p class="role">Aprendiz</p>
+            <p class="description">Apasionado por el aprendizaje continuo y la creación de contenido educativo.</p>
+            <div class="stats">
+                <div>
+                    <p>Suscrito</p>
+                    <p class="stat-number">10</p>
+                </div>
+                <div>
+                    <p>Suscriptores</p>
+                    <p class="stat-number">25</p>
+                </div>
+            </div>
+        </section>
+        <!-- Contenido creado por el instructor -->
+        <section class="content-list">
+            <h3>Cursos creados</h3>
+            <ul>
+                <li>Curso 1: Introducción a la programación</li>
+                <li>Curso 2: Diseño de interfaces</li>
+                <li>Curso 3: Desarrollo web avanzado</li>
+            </ul>
+        </section>
+    </main>
+    <script src="perfilUsuario.js"></script>
+    <script>
+        window.onload = function() {
+            const name = localStorage.getItem('userName') || 'Juan Esteban';  // Valor predeterminado
+            const description = localStorage.getItem('userDescription') || 'Apasionado por el aprendizaje continuo y la creación de contenido educativo.';  // Valor predeterminado
+            const profilePic = localStorage.getItem('userProfilePic') || 'https://mdbcdn.b-cdn.net/img/new/avatars/1.webp';  // Foto predeterminada
+        
+            document.querySelector('.user-info h2').textContent = name;
+            document.querySelector('.user-info .description').textContent = description;
+            document.querySelector('.user-info img').src = profilePic;
+        };
+        </script>
+        
+</body>
+</html>

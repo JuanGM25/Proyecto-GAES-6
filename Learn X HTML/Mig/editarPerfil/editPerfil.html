@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Perfil</title>
+    <link rel="stylesheet" href="estilosEditPerfil.css">
+</head>
+<body>
+    <main class="edit-profile-container">
+        <img src="Multimedia/LogoLearnX.png" width="80px" alt="">
+        <h1>MI PERFIL</h1>
+        <div class="edit-item">
+            <img id="profile-pic" src="default-profile.png" alt="Foto de perfil" class="profile-pic">
+            <label for="file-upload" class="edit-button">✏️</label>
+            <input id="file-upload" type="file" accept="image/*" onchange="updatePhoto()" style="display: none;">
+        </div>        
+
+        <div class="edit-item">
+            <label>Nombre:</label>
+            <input type="text" id="name" value="Juan Esteban">
+            <button class="edit-button" onclick="enableEdit('name')">✏️</button>
+        </div>
+
+        <div class="edit-item">
+            <label>Descripción:</label>
+            <textarea id="description">Apasionado por el aprendizaje continuo y la creación de contenido educativo.</textarea>
+            <button class="edit-button" onclick="enableEdit('description')">✏️</button>
+        </div>
+
+        <button class="save-button" onclick="confirmSave()">Guardar cambios</button>
+
+        <button class="back-button" onclick="goBack()">Volver</button>
+
+        <div id="confirmation-popup" class="popup hidden">
+            <p>¿Confirmar cambios?</p>
+            <button class="popup-button" onclick="saveChanges()">Sí</button>
+            <button class="popup-button" onclick="closePopup()">No</button>
+        </div>
+
+        <div id="success-message" class="success-message hidden">
+            <p>¡Se actualizaron los cambios correctamente!</p>
+        </div>
+    </main>
+    <script src="editPerfil.js"></script>
+</body>
+</html>

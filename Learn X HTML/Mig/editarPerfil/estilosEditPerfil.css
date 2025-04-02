@@ -1,0 +1,145 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color:  rgb(24, 139, 7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+#profile-pic {
+    max-width: 200px; 
+    max-height: 200px; 
+    object-fit: cover; 
+    border-radius: 50%; 
+    margin-bottom: 20px;
+}
+
+.edit-profile-container {
+    background: rgb(244, 246, 244);
+    padding: 100px 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 400px;
+}
+
+h1 {
+    margin-bottom: 100px;
+    color: #029c05;
+}
+
+.edit-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.edit-item label {
+    margin-right: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+input, textarea {
+    flex: 1;
+    padding: 10px;
+    font-size: 15px;
+    border: 2px solid #01a514;
+    border-radius: 5px;
+}
+
+textarea {
+    resize: none;
+    height: 90px;
+}
+
+.edit-button {
+    background: none;
+    border: none;
+    font-size: 17px;
+    cursor: pointer;
+    color: #4caf50;
+    margin-left: 10px;
+}
+
+.edit-button:hover {
+    color: #388e3c;
+}
+
+.save-button {
+    background-color: #4caf50;
+    color: white;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.save-button:hover {
+    background-color: #388e3c;
+}
+
+.popup, .success-message {
+    position: fixed;
+    background: white;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.popup {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.success-message {
+    bottom: 20px;
+    right: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+.popup-button {
+    margin: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.popup-button:first-child {
+    background-color: #4caf50;
+    color: white;
+}
+
+.popup-button:last-child {
+    background-color: #f44336;
+    color: white;
+}
+.back-button {
+    background-color: #f1f1f1;
+    color: #029c05;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.back-button:hover {
+    background-color: #e1e1e1;
+}
