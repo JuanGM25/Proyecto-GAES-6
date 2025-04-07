@@ -15,11 +15,11 @@ class usuarioSeeder extends Seeder
     public function run(): void
     {
          DB::table('usuario')->insert([
-            'primer nombre' => 'tim',
-            'segundo nombre' => 'burton',
+            'primer_nombre' => 'tim',
+            'segundo_nombre' => 'burton',
             'correo' => 'burton@gmail.com',
             'password' => Hash::make('tim1234'),
-            'fkid_rol' => 2,
+            'fkid_rol' => 1,
         ]);
     }
 }
