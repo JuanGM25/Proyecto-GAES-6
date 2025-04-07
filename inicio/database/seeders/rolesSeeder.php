@@ -14,13 +14,18 @@ class rolesSeeder extends Seeder
     public function run(): void
 {
     DB::table('roles')->updateOrInsert(
-        ['id_rango' => 1],
-        ['rango' => 'usuario']
+        ['id_rol' => 1],
+        ['rol' => 'administrador']
     );
 
     DB::table('roles')->updateOrInsert(
-        ['id_rango' => 2],
-        ['rango' => 'administrador']
+        ['id_rol' => 2],
+        ['rol' => 'aprendiz']
+    );
+
+    DB::table('roles')->updateOrInsert(
+        ['id_rol' => 3],
+        ['rol' => 'instructor']
     );
 }
 

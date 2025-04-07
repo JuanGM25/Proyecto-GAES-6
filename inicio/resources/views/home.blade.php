@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                @if(Auth::user()->id_rango == 2)                
+                @if(Auth::user()->fkid_rol == 2)                
                     <div class="card-header">{{ __('Bienvenido Administrador:' ) }} {{ Auth::user()->name }}</div>
                 @else
                     <div class="card-header">{{ __('Explora ahora entre cientos de cursos') }}</div>
@@ -18,7 +18,7 @@
                         </div>
                     @endif
 
-                    @if(Auth::user()->id_rango == 2)                
+                    @if(Auth::user()->fkid_rol == 2)                
                         {{ __('Opciones') }}
                     @else
                         {{ __('Mi cuenta') }}
