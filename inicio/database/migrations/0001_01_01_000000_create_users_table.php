@@ -47,3 +47,9 @@ return new class extends Migration
         Schema::dropIfExists('sessions');
     }
 };
+
+public function up()
+{
+    DB::statement('ALTER TABLE usuario MODIFY id_usuario BIGINT UNSIGNED NOT NULL AUTO_INCREMENT;');
+};
+
